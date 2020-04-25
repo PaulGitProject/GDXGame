@@ -18,6 +18,12 @@ public class EventDeTouche {
     public static void menu() {
         if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
             if (affichage.equalsIgnoreCase("settings")) {
+                if (Integer.parseInt(espacementTuyauxParametre.getText()) < 150) {
+                    espacementTuyauxParametre.setText("150");
+                }
+                if (Integer.parseInt(vitesseParametreText.getText()) < 1) {
+                    vitesseParametreText.setText("1");
+                }
                 espacementTuyaux = Integer.parseInt(espacementTuyauxParametre.getText());
                 vitesseDeplacementTuyaux = Integer.parseInt(vitesseParametreText.getText());
             }

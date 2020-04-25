@@ -87,22 +87,12 @@ public class Dessiner {
         vitesseParametreText.setAlignment(Align.center);
         vitesseParametreText.setTextFieldFilter(new TextField.TextFieldFilter.DigitsOnlyFilter());
 
-        if (!espacementTuyauxParametre.getText().isEmpty()) {
-            if (Integer.parseInt(espacementTuyauxParametre.getText()) > 350) {
+        if (!espacementTuyauxParametre.getText().isEmpty() && Integer.parseInt(espacementTuyauxParametre.getText()) > 350) {
                 espacementTuyauxParametre.setText("350");
-            } else if (Integer.parseInt(espacementTuyauxParametre.getText()) < 150) {
-                espacementTuyauxParametre.setText("150");
-            } else {
-                espacementTuyaux = Integer.parseInt(espacementTuyauxParametre.getText());
-            }
         }
 
-        if (!vitesseParametreText.getText().isEmpty()) {
-            if (Integer.parseInt(vitesseParametreText.getText()) > 5) {
+        if (!vitesseParametreText.getText().isEmpty() && Integer.parseInt(vitesseParametreText.getText()) > 5) {
                 vitesseParametreText.setText("5");
-            } else {
-                vitesseDeplacementTuyaux = Integer.parseInt(vitesseParametreText.getText());
-            }
         }
 
         stage.addActor(vitesseParametreText);
