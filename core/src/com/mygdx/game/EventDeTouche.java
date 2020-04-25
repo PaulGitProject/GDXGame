@@ -9,7 +9,7 @@ public class EventDeTouche {
 
     public static void saute() {
         if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
-            play = true;
+            if(!play) play = true; //On attend que le joueur appui une fois sur espace pour que les tuyaux commencent à avancer etc..
             vistesseOiseau = -jumpHeight;
             saut.play(0.01f);
         }

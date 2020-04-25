@@ -21,6 +21,11 @@ public class GDXGame extends ApplicationAdapter {
 	 * Elles seront déclarées (donc auront des valeurs) dans la fonction public void create(){} en dessous du @Override
 	 */
 
+	/**
+	 * Le static permet d'avoir accès a ces variables n'importe où (dans n'importe quelle autre class).
+	 * Il faut savoir que normalement on utiliserait pas autant de static, mais nous en ferions des "objects", cependant cela serait trop complexe a expliquer pour le projet.
+	 */
+
 	//SPRITES
 	static Sprite oiseau;
 	static Sprite tuyauDuHaut;
@@ -37,7 +42,7 @@ public class GDXGame extends ApplicationAdapter {
 
 	//TEXTS
 	static BitmapFont font;
-	static FreeTypeFontGenerator generator;
+	private FreeTypeFontGenerator generator;
 	static FreeTypeFontGenerator.FreeTypeFontParameter parameter;
 
 	//TEXTURES
@@ -47,7 +52,7 @@ public class GDXGame extends ApplicationAdapter {
 	static Sound saut;
 	static Sound ding;
 
-	//PIPES SETTINGS
+	//PIPES (TUYAUX) SETTINGS
 	static int ecartTuyaux = 300; //min : windowWidth + pipeWidth = 630 ; Range of the total pipe swipe before reset
 	static int espacementTuyaux = 200; //Espace entre le tuyau du haut et du bas
 	static int vitesseDeplacementTuyaux = 3; //De combien de pixel les tuyaux se déplacent chaque tick
@@ -150,11 +155,15 @@ public class GDXGame extends ApplicationAdapter {
 
 		}
 		if(affichage.equals("menu")) {
+			//On affiche le menu de base (avec PLAY, SETTINGS et EXIT)
 			Dessiner.menu();
+			//On écoute sur quelle "sous-menu" (PLAY, SETTINGS et EXIT) il appui
 			EventDeTouche.menuSwitch();
 		}
 		if(affichage.equals("lose")) {
+			//On écoute ce qu'il sélectionne dans le "menu" de mort
 		    EventDeTouche.loseSwitch();
+		    //On affiche le "menu" de mort
 		    Dessiner.mort();
         }
 		if(affichage.equals("settings")) {
