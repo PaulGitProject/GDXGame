@@ -13,8 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 
 public class GDXGame extends ApplicationAdapter {
-	static SpriteBatch batch;
-	static Stage stage;
+
 
 	/**
 	 * Tout ce qu'il y à entre ici et le @Override sont des variables "vides".
@@ -26,6 +25,10 @@ public class GDXGame extends ApplicationAdapter {
 	 * Il faut savoir que normalement on utiliserait pas autant de static, mais nous en ferions des "objects", cependant cela serait trop complexe a expliquer pour le projet.
 	 */
 
+
+
+	static SpriteBatch batch;
+	static Stage stage;
 	//SPRITES
 	static Sprite oiseau;
 	static Sprite tuyauDuHaut;

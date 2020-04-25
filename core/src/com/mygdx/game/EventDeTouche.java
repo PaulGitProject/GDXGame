@@ -79,6 +79,9 @@ public class EventDeTouche {
                     break;
             }
         }
+        if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
+            affichage = "menu";
+        }
     }
 
 }
